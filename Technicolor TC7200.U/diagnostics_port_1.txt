@@ -1,0 +1,280 @@
+ eCos - hal_diag_init
+Init device '/dev/BrcmTelnetIoDriver'
+Init device '/dev/ttydiag'
+Init tty channel: 817a9bf8
+Init device '/dev/tty0'
+Init tty channel: 817a9c18
+Init device '/dev/haldiag'
+HAL/diag SERIAL init
+Init device '/dev/ser0'
+BCM 33XX SERIAL init - dev: b4e00500.2
+Set output buffer - buf: 0x8191c0b0 len: 4096
+Set input buffer - buf: 0x8191d0b0 len: 4096
+BCM 33XX SERIAL config
+Init device '/dev/ser1'
+BCM 33XX SERIAL init - dev: b4e00520.3
+Set output buffer - buf: 0x8191e0b0 len: 4096
+Set input buffer - buf: 0x8191f0b0 len: 4096
+BCM 33XX SERIAL config
+
+InitBoard: MIPS frequency 637200000
+Function: SetHardcodeVendorProfile
+[00:00:00 01/01/1970] [tStartup] BcmBfcStdEmbeddedTarget::InitStorageDrivers:  (BFC Target) Configuring/Loading Flash driver...
+[00:00:00 01/01/1970] [tStartup] BcmSpiFlashDevice::DetectFlash:  (SPI Flash Device Factory) WARNING - Detected SPI flash with JEDEC ID =0xc22014
+Waited 12 iterations after device ID read
+NAND flash: Device size 64 MB, Block size 16 KB, Page size 512 B
+[00:00:00 01/01/1970] [tStartup] BcmNandFlashDevice::DetectNandFlash:  (NAND Flash Device Factory) WARNING - Detected NAND flash with JEDEC ID =0x20762076
+Found bootloader flash map at 0x80000904.
+[00:00:00 01/01/1970] [tStartup] FlashDeviceDriver::SpiFlashPlaceRegions:  (Flash Driver C API) WARNING - Partition falls out of range of device 0. Placing in device 1...
+[00:00:00 01/01/1970] [tStartup] FlashDeviceDriver::SpiFlashPlaceRegions:  (Flash Driver C API) WARNING - Partition falls out of range of device 0. Placing in device 1...
+[00:00:00 01/01/1970] [tStartup] FlashDeviceDriver::SpiFlashPlaceRegions:  (Flash Driver C API) WARNING - Partition falls out of range of device 0. Placing in device 1...
+[00:00:00 01/01/1970] [tStartup] FlashDeviceDriver::SpiFlashPlaceRegions:  (Flash Driver C API) WARNING - Partition falls out of range of device 0. Placing in device 1...
+[00:00:00 01/01/1970] [tStartup] FlashDeviceDriver::SpiFlashPlaceRegions:  (Flash Driver C API) WARNING - Partition falls out of range of device 0. Placing in device 1...
+[00:00:00 01/01/1970] [tStartup] FlashDeviceDriver::SpiFlashPlaceRegions:  (Flash Driver C API) WARNING - Partition falls out of range of device 0. Placing in device 1...
+[00:00:00 01/01/1970] [tStartup] BcmBfcStdEmbeddedTarget::InitStorageDrivers:  (BFC Target) Loading BootloaderStore driver...
+[00:00:00 01/01/1970] [tStartup] BcmBfcStdEmbeddedTarget::InitStorageDrivers:  (BFC Target) Loading ProgramStore driver...
+ProgramStoreDeviceDriver::ProgramStoreDriverInit:  INFO - Initializing...
+[00:00:00 01/01/1970] [tStartup] BcmBfcStdEmbeddedTarget::InitStorageDrivers:  (BFC Target) Loading NonVol driver...
+[00:00:00 01/01/1970] [tStartup] BcmBfcStdEmbeddedTarget::InitStorageDrivers:  (BFC Target) Storage drivers initialized successfully.
+[00:00:00 01/01/1970] [tStartup] BcmBfcStdEmbeddedTarget::InitDeviceAbstractions:  (BFC Target) Creating singletons for ProgramStore/BootloaderStore/NonVol devices...
+Detecting the next image number that we will store to by default...
+Bootloader indicates we are running image 2
+By default, we will dload to image number 1!
+
+By default, we will dload to block number 0!
+
+[00:00:00 01/01/1970] [tStartup] BcmBfcStdEmbeddedTarget::InitDeviceAbstractions:  (BFC Target) Device abstraction singletons created successfully.
+
+[Askey Debug]: No VP-24, use the default valus
+ThomWiFi80211NonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+CmSnmpNonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+ThomWiFi80211NonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+CmSnmpNonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+ThomWiFi80211NonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+CmSnmpNonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+ThomWiFi80211NonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+CmSnmpNonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+ThomWiFi80211NonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+CmSnmpNonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+ThomWiFi80211NonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+CmSnmpNonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+ThomWiFi80211NonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+CmSnmpNonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+ThomWiFi80211NonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+CmSnmpNonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+[00:00:00 01/01/1970] [tStartup] BcmCmBpiNonVolSettings::BcmCmBpiNonVolSettings:  (Euro-Docsis CM BPI NonVol Settings) WARNING - Singleton pointer is not NULL!  There are multiple instances!  Leaving the singleton pointer alone...
+ThomWiFi80211NonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+ThomWiFi80211NonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+ThomWiFi80211NonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+ThomWiFi80211NonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+BcmPcpClientServiceAppIf::GetSingletonInstance:  WARNING - the singleton is NULL, and someone is accessing it!
+BcmeRouterNonVolSettings::GetSingletonInstance:  WARNING - the singleton instance is NULL, and someone is accessing it!
+mtaNvCalcChecksum: checksum= 1273036263
+Reading Permanent settings from non-vol...
+Checksum for permanent settings:  0x47cb0bfc
+Setting downstream calibration signature to '5.5.10mp1|die temperature:74.108degC'
+Setting downstream calibration signature to '5.5.10mp1|die temperature:74.664degC'
+[00:00:00 01/01/1970] [tStartup] BcmEmtaSipNonVolSettings::ReadFromImpl:  (EMTA Config NonVol Settings) ERROR - Read unsupported version (less than 1.0)!  These settings are not valid!
+[00:00:00 01/01/1970] [tStartup] BcmEmtaSipNonVolSettings::ReadFrom:  (EMTA Config NonVol Settings) ERROR - EMTA Config NonVol Settings failed to read all of its settings from the buffer!
+[00:00:00 01/01
+[Askey Debug]: GPIO-36: 0
+[Askey Debug]: GPIO-37: 1
+[Askey Debug]: USG front-end
+/1970] [tStartup] BcmBfcAppCompositeNonVolSettings::ReadFrom:  ERROR - A contained Settings object failed to parse the Group settings!
+[00:00:00 01/01/1970] [tStartup] BcmEmtaSipNonVolSettings::IsDefault:  (EMTA Config NonVol Settings) Permanent settings are default!
+
+*
+*
+* One or more of the settings groups was missing, possibly as a result of a code upgrade.
+*
+*
+Settings were read and verified.
+
+
+Reading Dynamic settings from non-vol...
+Checksum for dynamic settings:  0x95818546
+BcmPcpClientServiceAppIf::GetSingletonInstance:  WARNING - the singleton is NULL, and someone is accessing it!
+Settings were read and verified.
+
+[Askey Debug]: UPC NonVol IsUpgraded=0, Native version=6, Previous=0
+[Askey Debug]: No need to rework UPC NonVol country/language code.
+[00:00:00 01/01/1970] [tStartup] BcmBfcFpmDriver::Init:  Setting FPM Buffer size to: 256 Base Address: 0x836dd000
+[00:00:00 01/01/1970] [tStartup] BcmBfcFpmDriver::Init:  fFpmLargestBufferSize: 2048 fFpmSizeShiftBits: 0x8
+[00:00:00 01/01/1970] [tStartup] BcmBfcFpmDriver::Init:  Pool index: 0  pool size: 2048
+[00:00:00 01/01/1970] [tStartup] BcmBfcFpmDriver::Init:  Pool index: 1  pool size: 1024
+[00:00:00 01/01/1970] [tStartup] BcmBfcFpmDriver::Init:  Pool index: 2  pool size: 512
+[00:00:00 01/01/1970] [tStartup] BcmBfcFpmDriver::Init:  Pool index: 3  pool size: 256
+[00:00:00 01/01/1970] [tStartup] BcmBfcFpmDriver::Init:  Lookup table index: 0  pool size: 3
+[00:00:00 01/01/1970] [tStartup] BcmBfcFpmDriver::Init:  Lookup table index: 1  pool size: 2
+[00:00:00 01/01/1970] [tStartup] BcmBfcFpmDriver::Init:  Lookup table index: 2  pool size: 1
+[00:00:00 01/01/1970] [tStartup] BcmBfcFpmDriver::Init:  Lookup table index: 3  pool size: 1
+[00:00:00 01/01/1970] [tStartup] BcmBfcFpmDriver::Init:  Lookup table index: 4  pool size: 0
+[00:00:00 01/01/1970] [tStartup] BcmBfcFpmDriver::Init:  Lookup table index: 5  pool size: 0
+[00:00:00 01/01/1970] [tStartup] BcmBfcFpmDriver::Init:  Lookup table index: 6  pool size: 0
+[00:00:01 01/01/1970] [tStartup] BcmBfcFpmDriver::Init:  Lookup table index: 7  pool size: 0
+
+------------------------------------
+Free Pool Manager Configuration
+------------------------------------
+Buffer size in Bytes............... 256
+Number of Tokens................... 32768
+Single buffer tokens used count.... 32
+Double buffer tokens used ocunt.... 32
+Triple buffer tokens used count.... 32
+Quadruple buffer tokens used count. 33
+Base Address of FPM Memory ........ 0xb2200200
+Base Address of FPM Mem in DDR2.... 0x836dd000
+Total Configured FPM Memory Size... 8388608
+Free Fifo Full..................... 0
+Free Fifo Empty.................... 1
+Alloc Fifo Full.................... 1
+Alloc Fifo Empty................... 0
+Number of tokens available......... 32768
+Number of not valid token frees.... 0
+Number of not valid token multi.... 0
+Overflow Count..................... 0
+Underflow Count.................... 0
+[00:00:01 01/01/1970] [tStartup] BcmBfcPacketAlloc::Init:  Packet Alloc Header Buffer Start Addr: 0x82fdcf20 Length: 0x700000 Max Buffer Size: 0xe0
+PCI Core Init!  instance = 0, pCoreRegs = b2800000
+PCI Core PowerUp!  instance = 0.
+PCI Core Init Instance (0): No Link Status Found! Skipping enumeration.
+PCI Core Power Down. Instance = 0!
+PCI Core Init!  instance = 1, pCoreRegs = b2a00000
+PCI Core PowerUp!  instance = 1.
+
+PCI ENUMERATE*****************************************************************Creating a new host MSG PROC DQM manager. Instance: 83f405f4, DQM_REGS = b8601800, CTRL_REGS = b8601000
+Initializing main MSP DQM interrupts.
+ b8601000: 01800008
+ b8601004: 00000000
+ b8601008: 00000008
+ b860100c: 00000000
+ b8601010: 000c0000
+ b8601014: 00000000
+ b8601018: 00000000
+ b860101c: 00000000
+***********
+Checking bus #1
+Creating a new host FAP DQM manager. Instance: 83f40520
+Initializing main FAP DQM interrupts.
+ b8401000: 00000008
+ b8401004: 00000000
+ b8401008: 00000008
+ b840100c: 00000000
+ b8401010: 00000000
+ b8401014: 00000000
+ b8401018: 00000000
+ b840101c: 00000000
+        Checking device #0
+                In pcieEnumerateDevicCreating a new host PMC DQM manager. Instance: 83efd758, DQM_REGS = b8801800, CTRL_REGS = b8801000
+Initializing main PMC DQM interrupts.
+ b8801000: 00000000
+ b8801004: 00000000
+ b8801008: 00000008
+ b880100c: 00000000
+ b8801010: 00000000
+ b8801014: 00000004
+ b8801018: a1c9c380
+ b880101c: 00f79fb0
+Creating a new host PMC DQM manager. Instance: 83efd6c0, DQM_REGS = b8801800, CTRL_REGS = b8801000
+es(1) found a card: deviceNo = 0, funcNo = 0, busNo = 1, pcieAddr = 83fbcb68
+                In pcieEnumerateDevices: vendor = 000014e4, device = 00004359
+END PCIE ENUMERATE************************************************************************
+
+Booting Linux on TP1...
+BootLinux() TP1
+NandFlashRead: Detected out-of-order block @offset 0x28b0000, tagged offset 0xffffff00, expected offset 0x170000
+NandFlashRead: Failed to find replacement block!
+BootLinux: stopping the intermediate AVS code...
+<<<<< rx_thread sent initial handshake >>>>>>
+BootLinux: intermediate AVS code stopped normally (count = 2)
+Powering on USB
+Linux Boot Args: console=ttyS0,115200 ubi.mtd=linuxkfs ubi.mtd=linuxapps root=ubi0:rootfs ro noinitrd rootfstype=ubifs mem=67108864@67108864 mem=0@0
+[00:00:02 01/01/1970] [Telnet Thread] BcmTelnetThread::ThreadMain:  (Telnet Thread) Telnet server thread running...
+Creating SNMP agent cablemodem agent
+cablemodem agent disabling management.
+cablemodem agent defering traps.
+Creating BcmEmtaCommandTable
+Creating BcmEmtaEndptCommandTable
+
+If you pressed the 's' key before this point, we will skip driver initialization...
+AVS Thread Constructor....
+AVS Thread InitAVS: Bootloader AVS data was retrieved successfully.
+   xfer         = 0x817ee728
+   disabled     = 0
+   rmon ratio   = 1065
+   sigma        = -224
+   DacChange    = 21
+   adc_margin   = 150
+   madcperdac   = 285
+   dac_margin   = -476
+   flash margin = 150
+   marginOffset = 65534
+   deviceMap    = 0x817ee740
+   thresholds   = 0x817ee7dc
+   K = 1.065, L = 2.6, BG_Code = 5
+
+Creating TR-069 Thread...
+Creating DOCSIS Control Thread...
+Initializing main DTP DQM interrupts.
+ b8201000: 0000004c
+ b8201004: 00000000
+ b8201008: 00000008
+ b820100c: 00000000
+ b8201010: 00000000
+ b8201014: 00040000
+ b8201018: 00000000
+ b820101c: 00000000
+Creating a new host FAP DQM manager. Instance: 82f4a2b8
+Creating a new host FAP DQM manager. Instance: 82f4a1d0
+Creating a new host UTP DQM manager. Instance: 82f460b8
+Initializing main UTP DQM interrupts.
+ b8001000: 00000049
+ b8001004: 00000000
+ b8001008: 00000008
+ b800100c: 00000000
+ b8001010: 00000001
+ b8001014: 00000000
+ b8001018: 00000000
+ b800101c: 00000000
+Initalizing Gfap Hal..
+LNA Detected = Internal
+RF_freq is 440000000 so set REFPLL_LO to 1
+RF_freq is 440000000 so set REFPLL_LO to 1
+RF_freq is 440000000 so set REFPLL_LO to 1
+ADC Clocks aligned
+Initializing all 8 downstreams - this takes a while.  Patience, Grasshopper...
+1 2 3 4 5 6 7 8
+Creating a new host UTP DQM manager. Instance: 82f103b8
+Creating a new host UTP DQM manager. Instance: 82efffc8
+Creating a new host UTP DQM manager. Instance: 82efff00
+Powering UP switch. PIN = 14
+Creating a new host MSG PROC DQM manager. Instance: 82eff69c, DQM_REGS = b8601800, CTRL_REGS = b8601000
+Creating a new host MSG PROC DQM manager. Instance: 82eff5d4, DQM_REGS = b8601800, CTRL_REGS = b8601000
+Creating a new host MSG PROC DQM manager. Instance: 82eff430, DQM_REGS = b8601800, CTRL_REGS = b8601000
+Creating a new host MSG PROC DQM manager. Instance: 82eff230, DQM_REGS = b8601800, CTRL_REGS = b8601000
+Creating a new host FAP DQM manager. Instance: 82eff030
+Creating a new host FAP DQM manager. Instance: 82efee28
+Creating a new host MPEG PROC DQM manager. Instance: 82efec20, DQM_REGS = b8a01800, CTRL_REGS = b8a01000
+Initializing main MEP DQM interrupts.
+ b8a01000: 00000008
+ b8a01004: 00000000
+ b8a01008: 00000008
+ b8a0100c: 00000000
+ b8a01010: 00000000
+ b8a01014: 00000000
+ b8a01018: 00000000
+ b8a0101c: 00000000
+Creating a new host MPEG PROC DQM manager. Instance: 82efea28, DQM_REGS = b8a01800, CTRL_REGS = b8a01000
+Creating a new host MSG PROC DQM manager. Instance: 82ee98ac, DQM_REGS = b8601800, CTRL_REGS = b8601000
+Creating a new host MSG PROC DQM manager. Instance: 82ee96a4, DQM_REGS = b8601800, CTRL_REGS = b8601000
+Creating a new host MSG PROC DQM manager. Instance: 82ee974c, DQM_REGS = b8601800, CTRL_REGS = b8601000
+Creating a new host MSG PROC DQM manager. Instance: 82ee7748, DQM_REGS = b8601800, CTRL_REGS = b8601000
+Creating a new host MSG PROC DQM manager. Instance: 82ee76bc, DQM_REGS = b8601800, CTRL_REGS = b8601000
+Register Int Handler: busNo = 1, device = 0
+Creating a new host MPEG PROC DQM manager. Instance: 82b5ef7c, DQM_REGS = b8a01800, CTRL_REGS = b8a01000
+Creating a new host MPEG PROC DQM manager. Instance: 829f22d4, DQM_REGS = b8a01800, CTRL_REGS = b8a01000
+Creating a new host MPEG PROC DQM manager. Instance: 829f2224, DQM_REGS = b8a01800, CTRL_REGS = b8a01000
+Creating a new host MSG PROC DQM manager. Instance: 828b0a8c, DQM_REGS = b8601800, CTRL_REGS = b8601000
+Checking plant power...
+Plant power is 5.881848.  Turning amp on since that is below the threshold
+
