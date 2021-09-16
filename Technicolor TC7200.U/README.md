@@ -2,7 +2,13 @@
 
 ## Abstract
 
-The Technicolor TC7200.U is used as a cable modem by UPC / Cablecom in Switzerland. This document shows how to get root access in the linux console and how to access a hidden webservice with a browser.
+The Technicolor TC7200.U is used as a cable modem by UPC / Cablecom in Switzerland. At the moment, UPC Switzerland is slowly replacing the modem for a newer one. 
+
+This document describes 
+
+- Analysis and findings
+- How to get root access in the linux console 
+- How to access a hidden webservice with a browser
 
 Starting the device and connect an UTP cable directy to the router gives access to the main web based system info and settings screen.
 
