@@ -2,14 +2,22 @@
 
 ## Abstract
 
-The Technicolor TC7200.U is used as a cable modem by UPC / Cablecom in Switzerland. UPC is phasing out this modem.
+The Technicolor TC7200.U is used as a cable modem by UPC / Cablecom in Switzerland. This document shows how to get root access in the linux console and how to access a hidden webservice with a browser.
+
+Starting the device and connect an UTP cable directy to the router gives access to the main web based system info and settings screen.
 
 |   |  |
 |---|---|
 |![](./images/IMG_0700.jpg)|![IMG_0704](./images/IMG_0704.jpg)|
 | Technicolor TC7200.U|Main board|
+| ![web_login](images/web_login.png) |![web_settings](/Users/gilbert/Development/git/hardware-hacking-notes/Technicolor TC7200.U/images/web_settings.png)|
+| Web interface login |Web interface home screen|
 
-## Diagnostics port (boot loader)
+Let's open the device and look what is inside...
+
+
+
+## Boot loader console
 
 On the lower left corner of the main board, there is a socket, marked J305 and a 4 pins row, J306, marked as Linux console. First we measure the pins in the connector. With help of the multimeter and a the oscilloscope, we can determine the label of the pins. 
 
@@ -18,36 +26,49 @@ On the lower left corner of the main board, there is a socket, marked J305 and a
 |![osc_diag_vcc](./images/osc_diag_vcc.png)|![osc_diag_gnd](./images/osc_diag_gnd.png)|![osc_diag_tx](./images/osc_diag_tx.png)|![osc_diag_rx](./images/osc_diag_rx.png)|
 |VCC|GND|TX|RX|
 
-| Pin | Value | Multimeter | Oscilloscope                      |Bus Pirate|
-| ---- | ----- | ---------- | --------------------------------- |---|
-| 1    | VCC | 3.28V     | 3.28V steady                     |Not connected |
-| 2    | GND   | 0V         | 0V steady                         |GND |
-| 3    | Tx    | 3.12V    | Square wave signal during startup |MISO|
-| 4    | Rx    | 3.12V     | 3.12V steady                     |MOSI|
+| Pin | Value | Multimeter | Oscilloscope                      |Bus Pirate|Generic FT232RL board|
+| ---- | ----- | ---------- | --------------------------------- |---| ---- |
+| 1    | VCC | 3.28V     | 3.28V steady                     |Not connected |Not connected|
+| 2    | GND   | 0V         | 0V steady                         |GND |GND|
+| 3    | Tx    | 3.12V    | Square wave signal during startup |MISO|Rx|
+| 4    | Rx    | 3.12V     | 3.12V steady                     |MOSI|Tx|
 
 Connect the Bus Pirate to the diagnostics port and start a terminal application. E.g:
 
-```bash
+```sh
 $ screen /dev/ttyUSB0 115200 8N1
 ```
+
+
 | Bus Pirate connected to the boot loader console |Soldered wires to the linux console|
 |--|--|
 |![Bootloader console](./images/IMG_0743.jpg)|![Linux console](./images/IMG_0765.jpg)|
 
 
+
 ## Linux Console
 
-The Linux console has test points only on the board. After soldering some wires, we can connect the Bus Pirate to the pins. The soldering was not so easy. It looks like the manufacturer is using some high temperature solder stuff. Only TX and RX have to be soldered. For GND the pin of the boot console can be used. The router is running on:
+The Linux console has test points only on the board. After soldering some wires, we can connect the Bus Pirate to the pins. The soldering was not so easy. It looks like the manufacturer is using some high temperature solder stuff. Only TX and RX have to be soldered. For GND the pin of the boot console can be used. The Linux console (test points only) have the same pin layout as the eCos boot loader console:
+
+| Pin | Value | Multimeter | Oscilloscope                      |Bus Pirate|Generic FT232RL board|
+| ---- | ----- | ---------- | --------------------------------- |---| ---- |
+| 1    | VCC | 3.28V     | 3.28V steady                     |Not connected |Not connected|
+| 2    | GND   | 0V         | 0V steady                         |GND |GND|
+| 3    | Tx    | 3.12V    | Square wave signal during startup |MISO|Rx|
+| 4    | Rx    | 3.12V     | 3.12V steady                     |MOSI|Tx|
+
+Connect with `screen`, like with the boot loader console. The router is running on:
 
 **Linux version 2.6.30-1.0.10mp1 (wtchen@localhost.localdomain) (gcc version 4.2.3) #1 Mon Feb 24 14:21:58 CST 2014**
 
 
 
+
 ### Root access
 
-To get a root shell was extremely simple. After the boot process, press: `ctrl-j` to get the login prompt and log in with user `root` and password `admin`:
+To get a root shell was extremely simple, just guessing the obvious... Wait for the boot process to finish, then press: `ctrl-j` to get the login prompt and log in with user `root` and password `admin`:
 
-```shell
+```sh
 (none) login: root
 Password:
 
@@ -63,7 +84,7 @@ root
 
 ### CPU info
 
-```shell
+```sh
 ~ # cat /proc/cpuinfo
 system type             : BCM93383 reference design
 processor               : 0
@@ -87,7 +108,7 @@ VCEI exceptions         : not available
 
 The Linux boot shows the following partitions and its flash memory addresses:
 
-```
+```sh
 [    0.386000] Flash device 0:  Nor 4 partitions bs: 00010000 ps: 00000100
 [    0.392000] 4 partitions
 [    0.394000] mtd   offset     size name
@@ -151,7 +172,7 @@ Matching partition name with the image gives:
 | 2     | NAND | Mtdblock8      | dhtml      | 0023c000 |       2288 |        31 / 8 |
 | 2     | NAND | Mtdblock9      | linuxkfs   | 011fc000 |      18416 |        31 / 9 |
 
-```shell
+```sh
 ~ # df -a
 Filesystem           1024-blocks    Used Available Use% Mounted on
 rootfs                   12728     11920       808  94% /
@@ -170,7 +191,7 @@ ubi1:linuxapps           18372       300     18072   2% /apps
 
 Running processes after succesful boot:
 
-```
+```sh
 ~ # ps w
   PID USER       VSZ STAT COMMAND
     1 root      1412 S    init
@@ -221,6 +242,74 @@ Running processes after succesful boot:
 ```
 
 
+## Backdoor
+
+The list of processes shows that the router is running another web server, pointing to `/usr/local/src/www`. When inspecting the file system, one can see a webservice that is most likely used during development, but never removed before shipping the devices. This is still active on devices. Let's take a look there...
+
+```sh
+/apps/usr/local/srv/www/cgi-bin # ls -la
+drwxr-xr-x    3 root     root           824 Feb 24  2014 .
+drwxr-xr-x    4 root     root           360 Feb 24  2014 ..
+drwxr-xr-x    2 root     root           360 Feb 24  2014 CVS
+-rwxr-xr-x    1 root     root            74 Feb 24  2014 default-gw.sh
+-rwxr-xr-x    1 root     root           209 Jan  1  1970 get-apps-version.cgi
+-rwxr-xr-x    1 root     root           482 Feb 24  2014 get-logs.cgi
+-rwxr-xr-x    1 root     root           323 Jan  1  1970 index.cgi
+-rwxr-xr-x    1 root     root           356 Feb 24  2014 lsmounts.cgi
+-rwxr-xr-x    1 root     root           416 Feb 24  2014 service-status.sh
+-rwxr-xr-x    1 root     root          3729 Feb 24  2014 settings-post.cgi
+-rwxr-xr-x    1 root     root          3281 Feb 24  2014 settings.cgi
+
+```
+
+However, the default routing address of the device is 192.168.0.1, leading to the UPC setup page. When typing e.g. the url http://192.168.0.1/cgi-bin/get-logs.cgi, the browser shows an error page. So how can we access the other web server?
+
+Let's examin the network config:
+
+```sh
+~ # ifconfig
+eth0      Link encap:Ethernet  HWaddr 00:10:95:DE:AD:07
+          inet addr:169.254.179.33  Bcast:169.254.255.255  Mask:255.255.0.0
+          inet6 addr: fe80::210:95ff:fede:ad07/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:765 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:846 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:119724 (116.9 KiB)  TX bytes:178809 (174.6 KiB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:54 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:54 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:4536 (4.4 KiB)  TX bytes:4536 (4.4 KiB)
+```
+
+This shows a local network address, as if the modem would be not connected to the internet. When we open a browser and type in this ip address, followed by one of the cgi files.... Bingo! We have access to the syslog, kernel log, and some settings without typing any security to prevent it.
+
+|                                              |                                                          |
+| -------------------------------------------- | -------------------------------------------------------- |
+| ![get-logs.cgi](images/cgi_bin_logs1.png)    | ![get-logs.cgi](images/cgi_bin_logs2.png)                |
+| http://169.254.179.33/cgi-bin/get-logs.cgi   | http://169.254.179.33/cgi-bin/get-logs.cgi               |
+| ![settings.cgi](images/cgi_bin_settings.png) | ![get-apps-version.cgi](images/cgi_bin_apps_version.png) |
+| http://169.254.179.33/cgi-bin/settings.cgi   | http://169.254.179.33/cgi-bin/get-apps-version.cgi       |
+
+The `get-apps-version.cgi` returns non valid html. But looking into the script, it should return:
+
+```sh
+~ # cat apps/version.txt
+/home/wtchen/Project/Cow/targets/93383LxGTP1Nand/LNX1010mp1.LxG3383TP1-apps-140224.bin
+一 2月 24 14:28:53 CST 2014
+root@localhost.localdomain
+gcc version 4.2.3
+Version: 1.0.10mp1
+```
+
+## 
+
+
 
 ## References
 
@@ -240,7 +329,7 @@ Running processes after succesful boot:
 ### Bootloader output
 
 ```
- eCos - hal_diag_init
+eCos - hal_diag_init
 Init device '/dev/BrcmTelnetIoDriver'
 Init device '/dev/ttydiag'
 Init tty channel: 817a9bf8
