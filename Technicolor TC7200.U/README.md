@@ -16,7 +16,7 @@ Starting the device and connect an UTP cable directy to the router gives access 
 |---|---|
 |![](./images/IMG_0700.jpg)|![IMG_0704](./images/IMG_0704.jpg)|
 | Technicolor TC7200.U|Main board|
-| ![web_login](images/web_login.png) |![web_settings](/Users/gilbert/Development/git/hardware-hacking-notes/Technicolor TC7200.U/images/web_settings.png)|
+| ![web_login](images/web_login.png) |![web_settings](images/web_settings.png)|
 | Web interface login |Web interface home screen|
 
 Let's open the device and look what is inside...
