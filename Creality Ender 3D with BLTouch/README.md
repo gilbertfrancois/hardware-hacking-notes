@@ -359,5 +359,8 @@ Remove the capacitor near the Z-Stop plug on the mainboard, as described in sect
 
 [10] [Ender 3 BLtouch vanilla Marlin guide](https://www.youtube.com/watch?v=sUlqrSq6LeY)
 
+[11] [Vanilla Marlin Firmware configured for Ender 3 + BLTouch](https://www.danbp.org/p/en/node/136)
+
+
 [comment]: # "https://ecotrust-canada.github.io/markdown-toc/"
 
