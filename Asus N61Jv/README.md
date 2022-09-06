@@ -48,7 +48,14 @@ sudo update-grub
 
 ## Kernel drivers
 
-### Blacklist nouveau
+You can choose between the dedicated Nvidia driver or the Intel i915 video driver. Note that the latest 
+supported Nvidia driver for the 325M is nvidia-driver-340. This driver supports up to kernel version 5.4.0. 
+For newer kernel versions, only the Intel video driver will work. You have to blacklist the nvidia driver.
+
+To select nvidia only as the dedicated driver, you can use the program `nvidia-settings` or the command
+line program `/usr/bin/prime-select nvidia|intel|on-demand|query`.
+
+### Blacklist nouveau and/or nvidia
 
 In /etc/modprobe.d/blacklist-nvidia.conf:
 
@@ -107,3 +114,4 @@ xrandr --output HDMI-1 --preferred
 ## References
 
 https://unix.stackexchange.com/questions/13619/how-do-i-prevent-xorg-using-my-linux-laptops-display-panel
+https://stackoverflow.com/questions/20114918/xlib-extension-glx-missing-on-display-0
