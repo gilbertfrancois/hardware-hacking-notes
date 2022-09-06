@@ -70,14 +70,16 @@ sudo update-initramfs -u
 ### CDE
 
 Add the following lines at the top of `/usr/dt/bin/Xsession`, just under `set +a`:
+```sh
 xrandr --output LVDS-1 --off
 xrandr --output HDMI-1 --primary
 xrandr --output HDMI-1 --preferred
+```
 
 
 ### GDM3
 
-Uncomment in /etc/gdm3/custom.conf:
+Uncomment in `/etc/gdm3/custom.conf`:
 
 ```
 WaylandEnable=false
