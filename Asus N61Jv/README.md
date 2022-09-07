@@ -115,3 +115,4 @@ xrandr --output HDMI-1 --preferred
 
 https://unix.stackexchange.com/questions/13619/how-do-i-prevent-xorg-using-my-linux-laptops-display-panel
 https://stackoverflow.com/questions/20114918/xlib-extension-glx-missing-on-display-0
+https://askubuntu.com/questions/1365631/nvidia-340-driver-on-ubuntu-20-04
