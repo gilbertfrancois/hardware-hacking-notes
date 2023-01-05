@@ -27,7 +27,13 @@ Then type `sudo raspi-config`, to to `Interface Options` and enable `Serial port
 
 By now, you should be able to connect and log in.
 
+## On Ubuntu systems
 
+For a single session, start
+```sh
+sudo /sbin/agetty 115200 /dev/ttyUSB0
+```
+This will give a login prompt at the console. The agetty process will end as soon as you log out.
 
 ### Setting the right $TERM environment
 
